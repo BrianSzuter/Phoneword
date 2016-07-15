@@ -18,12 +18,16 @@ namespace Phoneword
             if (!string.IsNullOrWhiteSpace(translatedNumber))
             {
                 callButton.IsEnabled = true;
+                SMSButton.IsEnabled = true;
                 callButton.Text = "Call " + translatedNumber;
+                SMSButton.Text = "Send To " + translatedNumber;
             }
             else
             {
                 callButton.IsEnabled = false;
+                SMSButton.IsEnabled = false;
                 callButton.Text = "Call";
+                SMSButton.Text = "Send";
             }
         }
 
@@ -39,6 +43,13 @@ namespace Phoneword
                 if (dialer != null)
                     dialer.Dial(translatedNumber);
             }
+        }
+
+        void OnSMS(object sender, EventArgs e)
+        {
+            var SMSsender = DependencyService.Get<ISMS>();
+            if (SMSsender != null)
+                SMSsender.SendSMS(translatedNumber, SMSText.Text);
         }
     }
 }

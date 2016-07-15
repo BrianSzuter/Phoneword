@@ -4,7 +4,7 @@
   <mp:PhoneIdentity PhoneProductId="cf01a22c-4a0d-4300-84b2-7cc0156d4a5e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Phoneword.UWP</DisplayName>
-    <PublisherDisplayName>Dave</PublisherDisplayName>
+    <PublisherDisplayName>Brian</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -25,5 +25,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <uap:Capability Name="phoneCall" />
+    <uap:Capability Name="chat" />
   </Capabilities>
 </Package>
